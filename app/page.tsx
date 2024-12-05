@@ -185,13 +185,13 @@ export default function Home() {
                     <div className="min-w-[100px] w-[80px] flex flex-wrap gap-2">
                         {planePlan.map((item, index) => {
 
-                            var buttonClass = "w-[10px] h-[20px] border-2 border-black ";
+                            var buttonClass = "w-[10px] h-[20px] border-[1px] border-black tooltip ";
                             switch (item.koltukDurum) {
                                 case 0:
-                                    buttonClass += "bg-white text-black"
+                                    buttonClass += "bg-white text-black "
                                     break;
                                 case 1:
-                                    buttonClass += "bg-slate-500 tooltip text-white"
+                                    buttonClass += "bg-slate-500  text-white"
                                     break;
                                 case 2:
                                     buttonClass += "bg-yellow-500 text-white"
@@ -204,6 +204,9 @@ export default function Home() {
                                 <button onClick={() => { fillSeat(index) }} key={index} className={buttonClass}>
                                     {item.koltukDurum == 1 && (
                                         <div key={index} className="tooltiptext">{item.isim} {item.soyisim}</div>
+                                    )}
+                                    {item.koltukDurum==0 && (
+                                        <div key={index} className="tooltiptext">{index+1}</div>
                                     )}
                                 </button>
                             )
