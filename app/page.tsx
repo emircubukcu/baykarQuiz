@@ -180,12 +180,12 @@ export default function Home() {
 
     return (
         <div className="bg-white flex w-full h-full max-h-screen min-h-screen overflow-auto p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-            <div className="bg-slate-200 w-full h-fill ">
-                <div className="w-full h-full flex flex-wrap  gap-5">
-                    <div className="w-[180px] flex flex-wrap gap-2">
+            <div className="bg-slate-200 w-full h-fill bg-planeBg bg-no-repeat bg-center bg-cover">
+                <div className="w-full h-full flex flex-wrap justify-center items-center">
+                    <div className="min-w-[100px] w-[80px] flex flex-wrap gap-2">
                         {planePlan.map((item, index) => {
 
-                            var buttonClass = "w-[30px] h-[40px] border-2 border-black ";
+                            var buttonClass = "w-[10px] h-[20px] border-2 border-black ";
                             switch (item.koltukDurum) {
                                 case 0:
                                     buttonClass += "bg-white text-black"
@@ -197,9 +197,11 @@ export default function Home() {
                                     buttonClass += "bg-yellow-500 text-white"
                                     break;
                             }
+                            if((index+1)%2==0 && (index+1)%4!==0){
+                                buttonClass+=" mr-[20px]"
+                            }
                             return (
                                 <button onClick={() => { fillSeat(index) }} key={index} className={buttonClass}>
-                                    {index + 1}
                                     {item.koltukDurum == 1 && (
                                         <div key={index} className="tooltiptext">{item.isim} {item.soyisim}</div>
                                     )}
