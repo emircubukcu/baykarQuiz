@@ -119,13 +119,6 @@ export default function Home() {
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement> |React.ChangeEvent<HTMLSelectElement> , index: number) => {
         const { name, value } = e.target;
-        
-        console.log("Name:",name)
-        console.log("Value:",value)
-        
-        console.log("TypeName:",typeof(name))
-        console.log("Value:",typeof(value))
-
 
         if (selectedSeat.length <= 1 && currentTimeoutID != 0) {
             clearTimeout(currentTimeoutID)
@@ -133,15 +126,15 @@ export default function Home() {
         switch (index) {
             case 1:
                 setPassenger1(prevData => ({ ...prevData, [name]: value }))
-                localStorage.setItem("ps1",JSON.stringify(passenger1))
+                localStorage.setItem("ps1",JSON.stringify({ ...passenger1, [name]: value }))
                 break;
             case 2:
                 setPassenger2(prevData => ({ ...prevData, [name]: value }))
-                localStorage.setItem("ps2",JSON.stringify(passenger2))
+                localStorage.setItem("ps2",JSON.stringify({ ...passenger2, [name]: value }))
                 break;
             case 3:
                 setPassenger3(prevData => ({ ...prevData, [name]: value }))
-                localStorage.setItem("ps3",JSON.stringify(passenger3))
+                localStorage.setItem("ps3",JSON.stringify({ ...passenger3, [name]: value }))
                 break;
         }
     }
@@ -204,7 +197,6 @@ export default function Home() {
                                     buttonClass += "bg-yellow-500 text-white"
                                     break;
                             }
-
                             return (
                                 <button onClick={() => { fillSeat(index) }} key={index} className={buttonClass}>
                                     {index + 1}
