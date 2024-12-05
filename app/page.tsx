@@ -249,7 +249,7 @@ export default function Home() {
                                 </div>
                                 <div className="w-1/2 flex flex-col pr-2">
                                     <div className="text-base text-black font-medium">Doğum Tarihi</div>
-                                    <input type="date" onChange={(e) => handleChange(e, 1)} name="dogumTarihi" value={passenger1.dogumTarihi.toString()} required className="w-full border-2 px-2  border-slate-200"></input>
+                                    <input type="date" min="1970-01-01" max="2006-01-01" onChange={(e) => handleChange(e, 1)} name="dogumTarihi" value={passenger1.dogumTarihi.toString()} required className="w-full border-2 px-2  border-slate-200"></input>
                                 </div>
                             </div>
                         )}
@@ -287,7 +287,7 @@ export default function Home() {
                                 </div>
                                 <div className="w-1/2 flex flex-col pr-2">
                                     <div className="text-base text-black font-medium">Doğum Tarihi</div>
-                                    <input type="date" onChange={(e) => handleChange(e, 2)} name="dogumTarihi" value={passenger2.dogumTarihi.toString()} required className="w-full border-2 px-2  border-slate-200"></input>
+                                    <input type="date" min="1970-01-01" max="2006-01-01" onChange={(e) => handleChange(e, 2)} name="dogumTarihi" value={passenger2.dogumTarihi.toString()} required className="w-full border-2 px-2  border-slate-200"></input>
                                 </div>
                             </div>
                         )}
@@ -325,7 +325,7 @@ export default function Home() {
                                 </div>
                                 <div className="w-1/2 flex flex-col pr-2">
                                     <div className="text-base text-black font-medium">Doğum Tarihi</div>
-                                    <input type="date" onChange={(e) => handleChange(e, 3)} name="dogumTarihi" value={passenger3.dogumTarihi.toString()} required className="w-full border-2 px-2  border-slate-200"></input>
+                                    <input type="date" min="1970-01-01" max="2006-01-01" onChange={(e) => handleChange(e, 3)} name="dogumTarihi" value={passenger3.dogumTarihi.toString()} required className="w-full border-2 px-2  border-slate-200"></input>
                                 </div>
                             </div>
                         )}
